@@ -1,4 +1,4 @@
-﻿Build started 9/16/2016 1:07:01 PM.
+﻿Build started 9/16/2016 1:15:41 PM.
      1>Project "C:\Users\brann\Documents\Visual Studio 2010\Projects\program1_sieve_asm_and_C\_sieve_asm\sieve.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Debug\sieve.lastbuildstate".
@@ -6,7 +6,7 @@
          Creating "Debug\sieve.unsuccessfulbuild" because "AlwaysCreate" was specified.
        _MASM:
          Assembling [Inputs]...
-         cmd.exe /C "C:\Users\brann\AppData\Local\Temp\tmp940260c8b02442a697196387ec632da5.cmd"
+         cmd.exe /C "C:\Users\brann\AppData\Local\Temp\tmpbeda234f68bf4756b502bc021dfaf31d.cmd"
          ml.exe /c /nologo /Zi /Fo"Debug\sieve.obj" /Fl"sieve.lst" /W3 /errorReport:prompt  /Tasieve.asm
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\brann\Documents\Visual Studio 2010\Projects\program1_sieve_asm_and_C\_sieve_asm\Debug\sieve.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /DEBUG /PDB:"C:\Users\brann\Documents\Visual Studio 2010\Projects\program1_sieve_asm_and_C\_sieve_asm\Debug\sieve.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"main" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\brann\Documents\Visual Studio 2010\Projects\program1_sieve_asm_and_C\_sieve_asm\Debug\sieve.lib" /MACHINE:X86 Debug\sieve.obj
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.29
+Time Elapsed 00:00:01.10

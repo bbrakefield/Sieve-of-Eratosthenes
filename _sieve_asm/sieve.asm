@@ -9,7 +9,6 @@
 .DATA                               ; reserve storage for data
 
 array   BYTE   10000 DUP(0)
-prod    DWORD   ?
 i       DWORD   ?
 j       DWORD   ?
 k       DWORD   -1
