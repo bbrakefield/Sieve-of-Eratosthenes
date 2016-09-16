@@ -10,17 +10,19 @@ int main()
 {
 	time_t start_t, end_t, total_t;
 
-	time(&start_t);
+    /* Calculate and present execution time for C program. */
+	start_t = clock();
     system(CPATH);
-	time(&end_t);
-	total_t = difftime(end_t, start_t);
-	printf("Total time taken by CPU: %.50f\n", total_t);
+	end_t = clock();
+	total_t = (end_t - start_t) / (double) CLOCKS_PER_SEC;
+	printf("Total time taken by CPU: %.21f\n", total_t);
 
+    /* Calculate and present execution time for assembly program. */
 	start_t = clock();
     system(ASMPATH);
 	end_t = clock();
 	total_t = (end_t - start_t) / (double) CLOCKS_PER_SEC;
-	printf("Total time taken by CPU: %.50f\n", total_t);
+	printf("Total time taken by CPU: %.21f\n", total_t);
 	
     printf("hit any key to continue...\n");
     _getche();
