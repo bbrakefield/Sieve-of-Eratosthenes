@@ -12,14 +12,16 @@ array   BYTE   10000 DUP(0)
 prod    DWORD   ?
 i       DWORD   ?
 j       DWORD   ?
-k		DWORD	-1
+k       DWORD   -1
 
 .CODE                               ; start of main program code
 _main  PROC
+
 driverloop:
-	inc k
-	cmp k,	10000
-	jge quit
+    inc k                           ; increment most outerloop
+    cmp k,  10000                   ; compare counter to 10000
+    jge quit                        ; if value in counter is greater than or equal to 100 jump to quit process
+
     ; move starting values into counters
     mov     i, 2                    ; move 2 into 1st counter
     mov     j, 2                    ; move 2 into 2nd counter
@@ -27,7 +29,7 @@ driverloop:
 loop1:
     ; outer loop
     cmp     i, 10000                ; comapre 1st counter to 10000
-    jge     driverloop                ; if greater than or equal to 10,000 quit the program
+    jge     driverloop              ; if greater than or equal to 10,000 quit the program
       
 loop2:
     ; calculate index product 
