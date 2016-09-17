@@ -17,10 +17,17 @@ k       DWORD   -1
 _main  PROC
 
 driverloop:
-    mov array, 0
+    ; reinitiallize array
+    xor eax, eax                    ; write zero
+    mov ecx, 10000                  ; size of array
+    mov edi, offset array           ; address of array
+    cld                             ; clear direction flag
+    rep stosb                       ; set byte to string
+
+    ; run program 10000 times
     inc k                           ; increment most outerloop
     cmp k,  10000                   ; compare counter to 10000
-    jg quit                        ; if value in counter is greater than or equal to 100 jump to quit process
+    jg quit                         ; if value in counter is greater than or equal to 100 jump to quit process
 
     ; move starting values into counters
     mov     i, 2                    ; move 2 into 1st counter
