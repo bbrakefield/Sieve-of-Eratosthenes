@@ -1,4 +1,4 @@
-﻿Build started 9/16/2016 12:56:38 PM.
+﻿Build started 9/16/2016 5:19:21 PM.
      1>Project "C:\Users\brann\Documents\Visual Studio 2010\Projects\program1_sieve_asm_and_C\_sieve_C\sieve.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file ".\Debug\sieve.lastbuildstate".
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.80
+Time Elapsed 00:00:01.83

@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/16/16 13:15:42
+Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/16/16 17:42:31
 sieve.asm						     Page 1 - 1
 
 
@@ -23,55 +23,57 @@ sieve.asm						     Page 1 - 1
  00000000			_main  PROC
 
  00000000			driverloop:
- 00000000  FF 05 00002718 R	    inc k                           ; increment most outerloop
- 00000006  81 3D 00002718 R	    cmp k,  10000                   ; compare counter to 10000
+ 00000000  C6 05 00000000 R	    mov array, 0
+	   00
+ 00000007  FF 05 00002718 R	    inc k                           ; increment most outerloop
+ 0000000D  81 3D 00002718 R	    cmp k,  10000                   ; compare counter to 10000
 	   00002710
- 00000010  7D 5C		    jge quit                        ; if value in counter is greater than or equal to 100 jump to quit process
+ 00000017  7F 5C		    jg quit                        ; if value in counter is greater than or equal to 100 jump to quit process
 
 				    ; move starting values into counters
- 00000012  C7 05 00002710 R	    mov     i, 2                    ; move 2 into 1st counter
+ 00000019  C7 05 00002710 R	    mov     i, 2                    ; move 2 into 1st counter
 	   00000002
- 0000001C  C7 05 00002714 R	    mov     j, 2                    ; move 2 into 2nd counter
+ 00000023  C7 05 00002714 R	    mov     j, 2                    ; move 2 into 2nd counter
 	   00000002
 
- 00000026			loop1:
+ 0000002D			loop1:
 				    ; outer loop
- 00000026  81 3D 00002710 R	    cmp     i, 10000                ; comapre 1st counter to 10000
+ 0000002D  81 3D 00002710 R	    cmp     i, 10000                ; comapre 1st counter to 10000
 	   00002710
- 00000030  7D CE		    jge     driverloop              ; if greater than or equal to 10,000 quit the program
+ 00000037  7D C7		    jge     driverloop              ; if greater than or equal to 10,000 quit the program
 				      
- 00000032			loop2:
+ 00000039			loop2:
 				    ; calculate index product 
- 00000032  A1 00002710 R	    mov     eax, i                  ; move counter 1 into register
- 00000037  F7 25 00002714 R	    mul     j                       ; multiply by value in 2nd counter and store in eax
- 0000003D  3D 00002710		    cmp     eax, 10000              ; compare product to 10000
- 00000042  7F 18		    jg      loop2Done               ; jump to label2Done if product is greater than 10,000
- 00000044  80 B8 00000000 R	    cmp     [array + eax], 0        ; comapare the value at the current array index to zero
+ 00000039  A1 00002710 R	    mov     eax, i                  ; move counter 1 into register
+ 0000003E  F7 25 00002714 R	    mul     j                       ; multiply by value in 2nd counter and store in eax
+ 00000044  3D 00002710		    cmp     eax, 10000              ; compare product to 10000
+ 00000049  7F 18		    jg      loop2Done               ; jump to label2Done if product is greater than 10,000
+ 0000004B  80 B8 00000000 R	    cmp     [array + eax], 0        ; comapare the value at the current array index to zero
 	   00
- 0000004B  75 07		    jnz     increment_index         ; if it does not equal zero do nothing and jump to increment index
- 0000004D  C6 80 00000000 R	    mov     [array + eax], 1        ; otherwise place 1 in the index because the number is composite
+ 00000052  75 07		    jnz     increment_index         ; if it does not equal zero do nothing and jump to increment index
+ 00000054  C6 80 00000000 R	    mov     [array + eax], 1        ; otherwise place 1 in the index because the number is composite
 	   01
 
- 00000054			increment_index:
+ 0000005B			increment_index:
 				    ; counter logic
- 00000054  FF 05 00002714 R	    inc     j                       ; increment 2nd counter
- 0000005A  EB D6		    jmp     loop2                   ; loop back to beginning of loop
+ 0000005B  FF 05 00002714 R	    inc     j                       ; increment 2nd counter
+ 00000061  EB D6		    jmp     loop2                   ; loop back to beginning of loop
 
- 0000005C			loop2Done:
- 0000005C  FF 05 00002710 R	    inc     i                       ; increment outer loop
- 00000062  C7 05 00002714 R	    mov     j, 2                    ; reset 2nd counter to 2
+ 00000063			loop2Done:
+ 00000063  FF 05 00002710 R	    inc     i                       ; increment outer loop
+ 00000069  C7 05 00002714 R	    mov     j, 2                    ; reset 2nd counter to 2
 	   00000002
- 0000006C  EB B8		    jmp     loop1                   ; jump to the begining of first loop
+ 00000073  EB B8		    jmp     loop1                   ; jump to the begining of first loop
 
 
- 0000006E			quit:
- 0000006E  B8 00000000		    mov     eax, 0                  ; exit with return code 0
- 00000073  C3			    ret
+ 00000075			quit:
+ 00000075  B8 00000000		    mov     eax, 0                  ; exit with return code 0
+ 0000007A  C3			    ret
 
- 00000074			_main  ENDP
+ 0000007B			_main  ENDP
 
 				END
-Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/16/16 13:15:42
+Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/16/16 17:42:31
 sieve.asm						     Symbols 2 - 1
 
 
@@ -84,20 +86,20 @@ Segments and Groups:
 FLAT . . . . . . . . . . . . . .	GROUP
 STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
 _DATA  . . . . . . . . . . . . .	32 Bit	 0000271C Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 00000074 Para	  Public  'CODE'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000007B Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
 
                 N a m e                 Type     Value    Attr
 
-_main  . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000074 Public
+_main  . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000007B Public
   driverloop . . . . . . . . . .	L Near	 00000000 _TEXT	
-  loop1  . . . . . . . . . . . .	L Near	 00000026 _TEXT	
-  loop2  . . . . . . . . . . . .	L Near	 00000032 _TEXT	
-  increment_index  . . . . . . .	L Near	 00000054 _TEXT	
-  loop2Done  . . . . . . . . . .	L Near	 0000005C _TEXT	
-  quit . . . . . . . . . . . . .	L Near	 0000006E _TEXT	
+  loop1  . . . . . . . . . . . .	L Near	 0000002D _TEXT	
+  loop2  . . . . . . . . . . . .	L Near	 00000039 _TEXT	
+  increment_index  . . . . . . .	L Near	 0000005B _TEXT	
+  loop2Done  . . . . . . . . . .	L Near	 00000063 _TEXT	
+  quit . . . . . . . . . . . . .	L Near	 00000075 _TEXT	
 
 
 Symbols:

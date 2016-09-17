@@ -17,9 +17,10 @@ k       DWORD   -1
 _main  PROC
 
 driverloop:
+    mov array, 0
     inc k                           ; increment most outerloop
     cmp k,  10000                   ; compare counter to 10000
-    jge quit                        ; if value in counter is greater than or equal to 100 jump to quit process
+    jg quit                        ; if value in counter is greater than or equal to 100 jump to quit process
 
     ; move starting values into counters
     mov     i, 2                    ; move 2 into 1st counter
