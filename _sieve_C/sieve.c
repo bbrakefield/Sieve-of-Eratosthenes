@@ -7,12 +7,14 @@
 int main()
 {
     int i, j, k;
-    
+    int primeArray[LIMIT];
+
 	for (k = 0; k <= 10000; k++) {
-        int primeArray[LIMIT];
+        
         i = 0;
         j = 0;
-		// fill array with 0 (prime)
+
+		/* fill array with 0 (prime) */
 		for (i = 2; i < LIMIT; i++) {
 			primeArray[i] = 0;
 		}

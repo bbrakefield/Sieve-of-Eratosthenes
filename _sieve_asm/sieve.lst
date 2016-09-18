@@ -1,4 +1,4 @@
-Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/17/16 18:02:48
+Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/18/16 12:58:39
 sieve.asm						     Page 1 - 1
 
 
@@ -79,7 +79,7 @@ sieve.asm						     Page 1 - 1
  00000083			_main  ENDP
 
 				END
-Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/17/16 18:02:48
+Microsoft (R) Macro Assembler Version 10.00.30319.01	    09/18/16 12:58:39
 sieve.asm						     Symbols 2 - 1
 
 

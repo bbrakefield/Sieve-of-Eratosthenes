@@ -1,9 +1,9 @@
-﻿Build started 9/17/2016 5:44:51 PM.
+﻿Build started 9/18/2016 1:09:03 PM.
      1>Project "C:\Users\brann\Documents\Visual Studio 2010\Projects\program1_sieve_asm_and_C\_sieve_test\sieve.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file ".\Debug\sieve.lastbuildstate".
        InitializeBuildStatus:
-         Touching ".\Debug\sieve.unsuccessfulbuild".
+         Creating ".\Debug\sieve.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt sieve_test.c
          sieve_test.c
@@ -27,4 +27,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.63
+Time Elapsed 00:00:01.41
